@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="pane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chat.LoginController">
+   <children>
+      <Label fx:id="label" layoutX="267.0" layoutY="36.0" prefHeight="25.0" prefWidth="73.0" text="LOG IN" />
+      <TextField fx:id="txtUsername" layoutX="194.0" layoutY="127.0" prefHeight="24.0" prefWidth="213.0" />
+      <JFXButton fx:id="btnLogin" layoutX="194.0" layoutY="225.0" onAction="#btnLogInOnAction" prefHeight="24.0" prefWidth="219.0" text="LOG IN" />
+      <Text fx:id="text1" layoutX="204.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create account" wrappingWidth="104.099609375" />
+      <Text fx:id="txtSignUP" fill="#124ce1" layoutX="329.0" layoutY="283.0" onMouseClicked="#SignupOnClick" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="95.099609375" />
+      <PasswordField fx:id="password" layoutX="194.0" layoutY="165.0" prefHeight="24.0" prefWidth="213.0" />
+   </children>
+</AnchorPane>
