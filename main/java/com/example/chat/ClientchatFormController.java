@@ -93,7 +93,7 @@ public class ClientchatFormController {
                 textFlow.setPadding(new Insets(5, 10, 5, 10));
                 text.setFill(Color.color(1, 1, 1));
                 pane.getChildren().add(textFlow);
-               // txtClientArea.getChildren().add(pane);
+               txtClientArea.getChildren().add(pane);
                 textArea.appendText("me:"+ clientMessage);
                 client.sendMessageToServer(username + " : " + clientMessage);
                 textField.clear();
@@ -109,9 +109,27 @@ public class ClientchatFormController {
     public void btnSendEmojiOnAction(ActionEvent actionEvent) throws IOException {
         String meaning = textField.getText();
         String emoji = findEmoji(meaning);
+        Platform.runLater(() -> {
+            if (!meaning.isEmpty()) {
+                HBox pane = new HBox();
+                pane.setPadding(new Insets(5, 10, 5, 10));
+                pane.setLayoutX(320);
+                Text text = new Text(emoji);
+                TextFlow textFlow = new TextFlow(text);
+                textFlow.setStyle("-fx-background-color: #7E308E;" + "-fx-background-radius: 10px");
+                textFlow.setPadding(new Insets(5, 10, 5, 10));
+                text.setFill(Color.color(1, 1, 1));
+                pane.getChildren().add(textFlow);
+                txtClientArea.getChildren().add(pane);
+                textArea.appendText("me:" + emoji);
+                client.sendMessageToServer(username + " : " + emoji);
+                textField.clear();
+                pane.setSpacing(20); // Set the horizontal spacing within the HBox
+                pane.setPadding(new Insets(10));
+                pane.setStyle(" -fx-vgap: 10px;");
+            }
+        });
 
-
-        textArea.setText(emoji);
     }
     public String findEmoji(String s) {
         if (s.equals("angry")) {

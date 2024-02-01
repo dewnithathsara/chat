@@ -49,7 +49,12 @@ public class LoginController {
                 if (isLogin) {
                     // checkCredentials(username);
                     new Alert(Alert.AlertType.CONFIRMATION, "User Logged in").showAndWait();
-                    openNewClient();
+                    FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("ClientchatForm.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    stage.setTitle(username+"'s chat");
+                    stage.setScene(scene);
+                    stage.show();
+
 
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Invalid credentials. Please try again.").show();
