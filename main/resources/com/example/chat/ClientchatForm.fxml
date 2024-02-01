@@ -11,5 +11,7 @@
       <TextField fx:id="textField" layoutX="66.0" layoutY="368.0" prefHeight="24.0" prefWidth="395.0" />
       <Button fx:id="btnSend" layoutX="476.0" layoutY="368.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="24.0" prefWidth="65.0" text="Button" />
       <Button fx:id="btnemoji" layoutX="559.0" layoutY="368.0" mnemonicParsing="false" onAction="#btnSendEmojiOnAction" text="Button" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="back" layoutX="535.0" layoutY="428.0" mnemonicParsing="false" onAction="#backbuttonONAction" text="Back" />
    </children>
 </AnchorPane>

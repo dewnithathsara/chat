@@ -7,17 +7,26 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
+
 public class Server {
+    private final ServerSocket serverSocket;
+    public Server(ServerSocket serverSocket){
+        this.serverSocket=serverSocket;
+    }
 
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket;
-        Socket socket;
+        ServerSocket serverSocket = new ServerSocket(3000);
+        Server server = new Server(serverSocket);
+        server.startServer();
+
+    }
+    public void startServer(){
         try {
-            serverSocket = new ServerSocket(3000);
+          //  serverSocket = new ServerSocket(3000);
             while(true) {
                 System.out.println("Waiting for clients...");
-                socket = serverSocket.accept();
+                Socket socket = serverSocket.accept();
                 System.out.println("Connected");
                 InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader); /*Buffer the input reader for efficient reading*/

@@ -22,6 +22,10 @@ public class Navigation {
                 window.setTitle("Register Form");
                 initUI("SignUp.fxml");
                 break;
+            case CLIENT:
+                window.setTitle("Client Form");
+                initUI("ClientchatForm.fxml");
+                break;
             default:
                 System.out.println("Mukuth Natho");
         }

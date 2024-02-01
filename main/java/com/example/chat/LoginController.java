@@ -66,7 +66,7 @@ public class LoginController {
     }
 
     private void openNewClient() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ServerInitializer.class.getResource("ClientchatForm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("ClientchatForm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle(username+"'s chat");
         stage.setScene(scene);

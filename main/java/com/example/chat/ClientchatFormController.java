@@ -2,6 +2,7 @@ package com.example.chat;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -36,6 +37,7 @@ public class ClientchatFormController {
     public TextField textField;
     public Button btnSend;
     public Button btnemoji;
+    public Button back;
     DataOutputStream dataOutputStream;
     public VBox txtClientArea;
     DataInputStream dataInputStream;
@@ -43,6 +45,7 @@ public class ClientchatFormController {
     String message="";
     public String host="localhost";
    private Client client;
+   Stage stage;
 
     public void initialize() throws IOException {
         client = new Client(new Socket(host, 3000), username);
@@ -65,7 +68,7 @@ public class ClientchatFormController {
             hBox.getChildren().add(textFlow);
 
 
-            if (username!= null && username.equals(sender)) {
+            if (username != null && username.equals(sender)) {
                 // Sender's message, align to the right
                 hBox.setAlignment(Pos.CENTER_LEFT);
             } else {
@@ -243,4 +246,7 @@ public class ClientchatFormController {
     }
 
 
+    public void backbuttonONAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Rote.LOGIN,pane);
+    }
 }
